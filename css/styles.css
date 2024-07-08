@@ -390,7 +390,6 @@ nav.hide {
 }
 
 .plan {
-  /* border: 2px solid #dddddd; */
   background: #fff;
   width: 330px;
   padding: 80px 0 50px;
@@ -399,12 +398,27 @@ nav.hide {
   flex-direction: column;
   align-content: flex-start;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan:hover{
+.plan:hover {
   border: 1px solid #f53838;
+  transform: scale(1.03) rotateY(180deg); /* Scale up and rotate 180deg on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Adjust shadow on hover */
 }
 
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.plan:hover {
+  animation: spin 0.5s ease-in-out forwards;
+}
 .plan-img-ctr {
   width: 145px;
   margin: 0 auto;
